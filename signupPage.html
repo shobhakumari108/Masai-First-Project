@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singup from kunal</title>
+    <style>
+     
+#container{
+    background-color: rgb(72,201,176);
+    width: 30%;
+    margin-left: 23%;
+    margin-top: 5%;
+    height: 550px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container>h2{
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 40px;
+}
+#container>input{
+    margin-left: 60px;
+    margin-bottom: 20px;
+    display: block;
+    width: 70%;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+}
+
+#container>input:placeholder-shown{
+    font-size: 20px;
+    padding-left: 20px;
+}
+#container>button{
+    background-color: rgb(23,165,137);
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    width: 75%;
+    height: 50px;
+    font-size: 20px;
+    border: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h2>-  Visitor -</h2>
+        <input type="text" placeholder="Full name" id="nam">
+        <input type="text" placeholder="Email" id="mail">
+        <input type="text" placeholder="Organization" id="org">
+         <button id="book">sing up</button>
+         <button>Return</button>
+
+   
+       
+    </div>
+</body>
+</html>
+
+<script>
+
+      let arr=JSON.parse(localStorage.getItem("CollectedData"))||[]
+
+      function Myfunc(){
+
+        let obj={} ;
+        obj.Name=document.querySelector("#nam").value
+        obj.Email=document.querySelector("#mail").value
+        obj.Organization=document.querySelector("#org").value
+        // console.log(obj)
+        arr.push(obj)
+        localStorage.setItem("CollectedData", JSON.stringify(arr))
+
+      }
+  document.querySelector("#book").addEventListener("click",Myfunc)
+
+//   
+</script>
